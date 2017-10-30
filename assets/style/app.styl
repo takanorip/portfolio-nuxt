@@ -1,8 +1,21 @@
 // Import custom theme
 @require './theme.styl'
+@require './other.styl'
 
 // Import Vuetify styling
 @require '~vuetify/src/stylus/main.styl'
 
 .page
   @extend .fade-transition
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0;
+}
+
+.text-primary {
+  color: $theme.primary;
+}
