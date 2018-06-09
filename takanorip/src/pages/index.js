@@ -30,9 +30,9 @@ class HomeIndex extends React.Component {
               <header className="major">
                 <h2>About Me</h2>
               </header>
-              <p>I'm a Frontend Developer. I develop WebApplications and WebSites.</p>
+              <p>I'm a Frontend Developer based in Tokyo. I develop WebApplications and WebSites. I am good at designing HTML / CSS, markup and developing with JavaScript. Recently I have developed with React, Vue.js and Polymer.</p>
               <ul className="actions">
-                <li><Link to="/landing" className="button next">Get Started</Link></li>
+                <li><Link to="/about" className="button icon fa-user">More</Link></li>
               </ul>
             </div>
           </section>
@@ -79,6 +79,13 @@ class HomeIndex extends React.Component {
               </header>
               <Link to="/landing" className="link primary"></Link>
             </article>
+          </section>
+          <section id="three">
+            <div className="inner">
+              <ul className="actions">
+                <li><Link to="/works" className="button icon fa-folder-open-o">More Works</Link></li>
+              </ul>
+            </div>
           </section>
         </div>
 
