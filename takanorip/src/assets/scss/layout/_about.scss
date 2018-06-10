@@ -1,0 +1,45 @@
+.about-profile {
+  @include vendor('display', 'flex');
+  margin-bottom: 2em;
+
+  @include breakpoint(small) {
+    display: block;
+  }
+}
+
+.about-profileImg {
+  width: 20%;
+  margin-right: 2em;
+  line-height: 0;
+
+  @include breakpoint(small) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.about-profileTexts {
+  flex: 1;
+}
+
+.about-profileText {
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.about-skills {
+  b {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    padding: 0.2em 1em;
+    background-color: _palette(fg-bold);
+    color: _palette(bg);
+    line-height: 1.5em;
+  }
+}

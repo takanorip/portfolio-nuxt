@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import BannerLanding from '../components/BannerLanding'
@@ -18,27 +19,29 @@ class WorksIndex extends React.Component {
           <meta name="description" content="Works | Takanori Oki" />
         </Helmet>
 
-        <BannerLanding title="Works" descriptionTop="My Works" descriptionBottom="" />
+        <BannerLanding title="Works" descriptionTop="My Works" descriptionBottom="" type="2" />
 
         <div id="main" className="alt">
-          {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.frontmatter.path
-            return (
-              <section key={node.frontmatter.path}>
-                <div className="inner">
-                  <header className="major">
-                    <h3>
-                      <Link to={node.frontmatter.path}>
-                        {title}
-                      </Link>
-                    </h3>
-                  </header>
-                  <small>{node.frontmatter.date}</small>
-                  <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                </div>
-              </section>
-            )
-          })}
+          <section>
+            <div className="inner">
+              <div className="works-items">
+                {posts.map(({ node }) => {
+                  console.log(node.frontmatter.cover.childImageSharp.sizes)
+                  const title = get(node, 'frontmatter.title') || node.frontmatter.path
+                  return (
+                    <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
+                      <div>
+                        <Img sizes={node.frontmatter.cover.childImageSharp.sizes} />
+                        <h4>{title}</h4>
+                        <small>{node.frontmatter.date}</small>
+                        <p className="works-category">{node.frontmatter.category}</p>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
         </div>
 
       </div>
@@ -60,9 +63,17 @@ export const pageQuery = graphql`
         node {
           excerpt
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "YYYY/MM")
             title
             path
+            category
+            cover {
+              childImageSharp {
+                sizes(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+                  ...GatsbyImageSharpSizes_tracedSVG
+                }
+              }
+            }
           }
         }
       }
