@@ -9,7 +9,7 @@ const About = (props) => (
   <div>
     <Helmet>
       <title>About | Takanori Oki</title>
-      <meta name="description" content="About Takanori Oki" />
+      <meta name="description" content="About | Takanori Oki" />
     </Helmet>
 
     <BannerLanding title="About" descriptionTop="My Profile, Experience, Skills" descriptionBottom="" type="1" />

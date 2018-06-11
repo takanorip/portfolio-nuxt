@@ -95,9 +95,9 @@
 		}
 
 		&.major {
-			height: 75vh;
+			height: 100vh;
 			min-height: 30em;
-			max-height: 50em;
+			max-height: 60em;
 
 			&.alt {
 				opacity: 0.75;
@@ -151,7 +151,6 @@
 			}
 
 			&.major {
-				height: auto;
 				min-height: 0;
 				max-height: none;
 			}

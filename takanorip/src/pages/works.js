@@ -24,18 +24,18 @@ class WorksIndex extends React.Component {
         <div id="main" className="alt">
           <section>
             <div className="inner">
+              <header className="major">
+                <h2>WebSites</h2>
+              </header>
               <div className="works-items">
                 {posts.map(({ node }) => {
                   console.log(node.frontmatter.cover.childImageSharp.sizes)
                   const title = get(node, 'frontmatter.title') || node.frontmatter.path
                   return (
                     <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
-                      <div>
-                        <Img sizes={node.frontmatter.cover.childImageSharp.sizes} />
-                        <h4>{title}</h4>
-                        <small>{node.frontmatter.date}</small>
-                        <p className="works-category">{node.frontmatter.category}</p>
-                      </div>
+                      <Img sizes={{...node.frontmatter.cover.childImageSharp.sizes, aspectRatio: 16/9}} />
+                      <h4 className="works-title">{title}</h4>
+                      <p className="works-category">{node.frontmatter.category}</p>
                     </Link>
                   )
                 })}
