@@ -14,7 +14,7 @@ const About = (props) => (
 
     <BannerLanding title="About" descriptionTop="My Profile, Experience, Skills" descriptionBottom="" type="1" />
 
-    <div id="main" className="alt">
+    <div id="main" className="">
       <section id="one">
         <div className="inner">
           <header className="major">

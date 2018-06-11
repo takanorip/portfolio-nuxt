@@ -21,7 +21,7 @@ class WorksIndex extends React.Component {
 
         <BannerLanding title="Works" descriptionTop="My Works" descriptionBottom="" type="2" />
 
-        <div id="main" className="alt">
+        <div id="main" className="">
           <section>
             <div className="inner">
               <header className="major">
