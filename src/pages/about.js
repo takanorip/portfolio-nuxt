@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import BannerLanding from '../components/BannerLanding'
 
-import logo from '../assets/images/logoicon.png'
+import logo from '../assets/images/icon.jpg'
 
 const About = (props) => (
   <div>
