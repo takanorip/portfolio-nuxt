@@ -23,7 +23,7 @@
 		line-height: 3.25em;
 		margin: 0;
 		position: fixed;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		top: 0;
 		width: 100%;
 		z-index: _misc(z-index-base);
@@ -47,6 +47,7 @@
 				line-height: 1.65em;
 				margin-right: 0.325em;
 				padding: 0 0.125em 0 (_font(letter-spacing-alt) + 0.125em);
+				font-family: "F5.6"
 			}
 
 			&:hover {

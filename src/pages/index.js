@@ -37,7 +37,7 @@ class HomeIndex extends React.Component {
           <section id="two" className="tiles">
             <article style={{backgroundImage: `url(${pic01})`}}>
               <header className="major">
-                <h3>Chie Hieda+</h3>
+                <h3>Chie Hieda</h3>
                 <p>WebSite</p>
               </header>
               <Link to="/works/chie-hieida" className="link primary"></Link>
