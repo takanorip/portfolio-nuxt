@@ -5,8 +5,6 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import BannerLanding from '../components/BannerLanding'
 
-import pic11 from '../assets/images/pic11.jpg'
-
 class WorksIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -72,13 +70,13 @@ class WorksIndex extends React.Component {
               <header className="major">
                 <h2>Slides</h2>
               </header>
-              <section>
+              <section className="works-slide">
                 <h3>Speaker Deck</h3>
-                <p><a className="button small icon fa-desktop" href="https://speakerdeck.com/takanorip" target="_blank" rel="noopener">More Slides</a></p>
+                <p><a className="button icon fa-desktop" href="https://speakerdeck.com/takanorip" target="_blank" rel="noopener">View Slides</a></p>
               </section>
-              <section>
+              <section className="works-slide">
                 <h3>Slides</h3>
-                <p><a className="button small icon fa-desktop" href="https://slides.com/takanorip" target="_blank" rel="noopener">More Slides</a></p>
+                <p><a className="button icon fa-desktop" href="https://slides.com/takanorip" target="_blank" rel="noopener">View Slides</a></p>
               </section>
             </div>
           </section>

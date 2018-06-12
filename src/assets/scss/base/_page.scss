@@ -36,3 +36,17 @@
 			}
 
 	}
+
+	.u-pc {
+		@include breakpoint(small) {
+	    display: none;
+	  }
+	}
+
+	.u-sp {
+		display: none;
+
+		@include breakpoint(small) {
+	    display: block;
+	  }
+	}
