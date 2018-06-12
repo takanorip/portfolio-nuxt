@@ -1,6 +1,6 @@
 ---
 title: イヌでもわかるウェブフォント
-date: "2087-04-28T22:40:32.169Z"
+date: "2018-04-28T22:40:32.169Z"
 cover: "./cover.jpg"
 category: "Book"
 path: "/works/webfont/"

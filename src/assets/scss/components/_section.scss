@@ -59,7 +59,13 @@
 
 		@include breakpoint(small) {
 			&.major {
-				> p {
+        width: 100%;
+
+        > :first-child {
+          width: 100%;
+        }
+
+        > p {
 					br {
 						display: none;
 					}
