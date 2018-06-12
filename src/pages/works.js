@@ -12,6 +12,13 @@ class WorksIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
+    const websites = posts.filter(({ node }) => {
+      return node.frontmatter.category === 'WebSite'
+    })
+    const books = posts.filter(({ node }) => {
+      return node.frontmatter.category === 'Book'
+    })
+
     return (
       <div>
         <Helmet>
@@ -28,8 +35,7 @@ class WorksIndex extends React.Component {
                 <h2>WebSites</h2>
               </header>
               <div className="works-items">
-                {posts.map(({ node }) => {
-                  console.log(node.frontmatter.cover.childImageSharp.sizes)
+                {websites.map(({ node }) => {
                   const title = get(node, 'frontmatter.title') || node.frontmatter.path
                   return (
                     <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
@@ -40,6 +46,40 @@ class WorksIndex extends React.Component {
                   )
                 })}
               </div>
+            </div>
+          </section>
+          <section>
+            <div className="inner">
+              <header className="major">
+                <h2>Books</h2>
+              </header>
+              <div className="works-items">
+                {books.map(({ node }) => {
+                  const title = get(node, 'frontmatter.title') || node.frontmatter.path
+                  return (
+                    <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
+                      <Img sizes={{...node.frontmatter.cover.childImageSharp.sizes, aspectRatio: 16/9}} />
+                      <h4 className="works-title">{title}</h4>
+                      <p className="works-category">{node.frontmatter.category}</p>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className="inner">
+              <header className="major">
+                <h2>Slides</h2>
+              </header>
+              <section>
+                <h3>Speaker Deck</h3>
+                <p><a className="button small icon fa-desktop" href="https://speakerdeck.com/takanorip" target="_blank" rel="noopener">More Slides</a></p>
+              </section>
+              <section>
+                <h3>Slides</h3>
+                <p><a className="button small icon fa-desktop" href="https://slides.com/takanorip" target="_blank" rel="noopener">More Slides</a></p>
+              </section>
             </div>
           </section>
         </div>
