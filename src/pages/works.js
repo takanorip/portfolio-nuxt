@@ -22,6 +22,8 @@ class WorksIndex extends React.Component {
         <Helmet>
           <title>Works | Takanori Oki</title>
           <meta name="description" content="Works | Takanori Oki" />
+          <meta property="og:title" content="Works | Takanori Oki" />
+          <meta property="og:description" content="Works | Takanori Oki" />
         </Helmet>
 
         <BannerLanding title="Works" descriptionTop="My Works" descriptionBottom="" type="2" />

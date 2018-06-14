@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Takanori Oki - Frontend Developer",
+    title: "Takanori Oki",
     author: "Takanori Oki",
-    description: "Portfolio"
+    description: "Portfolio - Takanori Oki"
   },
   pathPrefix: '/',
   plugins: [

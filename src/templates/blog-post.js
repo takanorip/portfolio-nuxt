@@ -11,7 +11,13 @@ class BlogPostTemplate extends React.Component {
     return (
       <div id="main" className="alt">
         <div className="inner">
-          <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+          <Helmet>
+            <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
+            <meta name="description" content={`${post.frontmatter.title} | ${siteTitle}`} />
+            <meta property="og:title" content={`${post.frontmatter.title} | ${siteTitle}`} />
+            <meta property="og:description" content={`${post.frontmatter.title} | ${siteTitle}`} />
+            <meta property="og:image" content={'https://takanorip.com' + post.frontmatter.cover.childImageSharp.sizes.src} />
+          </Helmet>
           <header className="major"><h1>{post.frontmatter.title}</h1></header>
           <p>
             {post.frontmatter.date}
@@ -39,6 +45,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM, YYYY")
+        cover {
+          childImageSharp {
+            sizes {
+              src
+            }
+          }
+        }
       }
     }
   }
