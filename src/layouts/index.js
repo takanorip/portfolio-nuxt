@@ -42,6 +42,14 @@ class Template extends React.Component {
     return (
       <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
         <Helmet>
+          <meta property="og:title" content="Takanori Oki - Portfolio" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://takanorip.com" />
+          <meta property="og:image" content="https://takanorip.com/ogp.png" />
+          <meta property="og:site_name" content="Takanori Oki - Portfolio" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@takanoripe" />
+          <meta name="twitter:creator" content="@takanoripe" />
           <link rel="stylesheet" href={withPrefix('skel.css')} />
         </Helmet>
         <div id="wrapper">

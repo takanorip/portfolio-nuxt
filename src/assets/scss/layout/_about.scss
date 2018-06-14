@@ -33,8 +33,38 @@
   }
 }
 
+.about-experience {
+  padding: 0;
+}
+
+.about-experienceItem {
+  display: flex;
+  padding-left: 0;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+  }
+}
+
+.about-experiencePeriod {
+  width: 320px;
+  margin: 1.5em 0 0 0;
+
+  icon {
+    margin-right: 1.5em;
+  }
+
+  @include breakpoint(medium) {
+    margin: 0 0 1.5em 0;
+  }
+}
+
+.about-experienceBox {
+  flex: 1;
+}
+
 .about-skills {
-  b {
+  span {
     display: inline-block;
     margin: 0 4px 4px 0;
     padding: 0.2em 1em;

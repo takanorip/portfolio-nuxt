@@ -59,7 +59,7 @@
 
 		@include breakpoint(small) {
 			&.major {
-        width: 100%;
+        max-width: 100%;
 
         > :first-child {
           width: 100%;
