@@ -46,7 +46,7 @@ class Template extends React.Component {
           <meta property="og:url" content="https://takanorip.com" />
           <meta property="og:image" content="https://takanorip.com/ogp.png" />
           <meta property="og:site_name" content="Takanori Oki - Portfolio" />
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@takanoripe" />
           <meta name="twitter:creator" content="@takanoripe" />
           <link rel="stylesheet" href={withPrefix('skel.css')} />
