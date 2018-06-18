@@ -33,6 +33,9 @@ const About = (props) => (
                 Recently I have developed with React, Vue.js and Polymer.
               </p>
               <p className="about-profileText">
+                I like Fonts, Road Bike, Table Tennis, Anime.
+              </p>
+              <p className="about-profileText">
                 I also accept accept a job offer as Solo proprietorship. Please feel free to <a href="https://twitter.com/takanoripe" target="_blank" rel="noopener">contact me</a>.
               </p>
             </div>
