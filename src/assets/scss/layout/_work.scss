@@ -21,7 +21,7 @@
   }
 
   &:hover {
-    .gatsby-image-outer-wrapper::before {
+    .gatsby-image-wrapper::before {
       opacity: 1;
       transform: translateX(0);
     }
@@ -47,7 +47,7 @@
   margin-bottom: 0;
 }
 
-.gatsby-image-outer-wrapper {
+.gatsby-image-wrapper {
   position: relative;
   overflow: hidden;
 
@@ -69,6 +69,12 @@
 
 .works-slide {
   margin-bottom: 4em;
+}
+
+.work-slide-embed {
+  width: 100%;
+  max-width: 576px;
+  height: 420px;
 }
 
 .gatsby-resp-image-link {

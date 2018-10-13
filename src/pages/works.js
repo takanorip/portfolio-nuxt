@@ -1,13 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import BannerLanding from '../components/BannerLanding'
+import { graphql } from 'gatsby'
+
+import Layout from '../components/layout'
 
 class WorksIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const pageTitle = `Works | ${siteTitle}`
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     const websites = posts.filter(({ node }) => {
@@ -18,15 +22,20 @@ class WorksIndex extends React.Component {
     })
 
     return (
-      <div>
+      <Layout>
         <Helmet>
-          <title>Works | Takanori Oki</title>
-          <meta name="description" content="Works | Takanori Oki" />
-          <meta property="og:title" content="Works | Takanori Oki" />
-          <meta property="og:description" content="Works | Takanori Oki" />
+          <title>{pageTitle}</title>
+          <meta name="description" content={pageTitle} />
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:description" content={pageTitle} />
         </Helmet>
 
-        <BannerLanding title="Works" descriptionTop="My Works" descriptionBottom="" type="2" />
+        <BannerLanding
+          title="Works"
+          descriptionTop="My Works"
+          descriptionBottom=""
+          type="2"
+        />
 
         <div id="main" className="">
           <section>
@@ -36,12 +45,25 @@ class WorksIndex extends React.Component {
               </header>
               <div className="works-items">
                 {websites.map(({ node }) => {
-                  const title = get(node, 'frontmatter.title') || node.frontmatter.path
+                  const title =
+                    get(node, 'frontmatter.title') || node.frontmatter.path
                   return (
-                    <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
-                      <Img sizes={{...node.frontmatter.cover.childImageSharp.sizes, aspectRatio: 16/9}} />
+                    <Link
+                      className="works-item"
+                      to={node.frontmatter.path}
+                      key={node.frontmatter.title}
+                    >
+                      <Img
+                        sizes={{
+                          ...node.frontmatter.cover.childImageSharp.sizes,
+                          aspectRatio: 16 / 9,
+                          maxHeight: 500
+                        }}
+                      />
                       <h4 className="works-title">{title}</h4>
-                      <p className="works-category">{node.frontmatter.category}</p>
+                      <p className="works-category">
+                        {node.frontmatter.category}
+                      </p>
                     </Link>
                   )
                 })}
@@ -55,12 +77,24 @@ class WorksIndex extends React.Component {
               </header>
               <div className="works-items">
                 {books.map(({ node }) => {
-                  const title = get(node, 'frontmatter.title') || node.frontmatter.path
+                  const title =
+                    get(node, 'frontmatter.title') || node.frontmatter.path
                   return (
-                    <Link className="works-item" to={node.frontmatter.path} key={node.frontmatter.title}>
-                      <Img sizes={{...node.frontmatter.cover.childImageSharp.sizes, aspectRatio: 16/9}} />
+                    <Link
+                      className="works-item"
+                      to={node.frontmatter.path}
+                      key={node.frontmatter.title}
+                    >
+                      <Img
+                        sizes={{
+                          ...node.frontmatter.cover.childImageSharp.sizes,
+                          aspectRatio: 16 / 9,
+                        }}
+                      />
                       <h4 className="works-title">{title}</h4>
-                      <p className="works-category">{node.frontmatter.category}</p>
+                      <p className="works-category">
+                        {node.frontmatter.category}
+                      </p>
                     </Link>
                   )
                 })}
@@ -74,17 +108,37 @@ class WorksIndex extends React.Component {
               </header>
               <section className="works-slide">
                 <h3>Speaker Deck</h3>
-                <p><a className="button icon fa-desktop" href="https://speakerdeck.com/takanorip" target="_blank" rel="noopener">View Slides</a></p>
+                <p>
+                  <a
+                    className="button icon fa-desktop"
+                    href="https://speakerdeck.com/takanorip"
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    View Slides
+                  </a>
+                </p>
               </section>
               <section className="works-slide">
                 <h3>Slides</h3>
-                <p><a className="button icon fa-desktop" href="https://slides.com/takanorip" target="_blank" rel="noopener">View Slides</a></p>
+                <p>
+                  <a
+                    className="button icon fa-desktop"
+                    href="https://slides.com/takanorip"
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    View Slides
+                  </a>
+                </p>
+                <iframe
+                  className="work-slide-embed"
+                  src="//slides.com/takanorip/pwa-now-and-future/embed"
+                  title="PWA"
+                  scrolling="no" />
               </section>
             </div>
           </section>
         </div>
-
-      </div>
+      </Layout>
     )
   }
 }
@@ -109,7 +163,11 @@ export const pageQuery = graphql`
             category
             cover {
               childImageSharp {
-                sizes(maxWidth: 850, quality: 90, traceSVG: { color: "#f3f3f3" }) {
+                sizes(
+                  maxWidth: 1084,
+                  quality: 90,
+                  traceSVG: { color: "#f3f3f3" }
+                ) {
                   ...GatsbyImageSharpSizes_tracedSVG
                 }
               }
