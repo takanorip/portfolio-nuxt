@@ -82,7 +82,7 @@ export default () => (
               <ul className="about-experience">
                 <li className="about-experienceItem">
                   <p className="about-experiencePeriod">
-                    <icon className="icon alt fa-building-o" />
+                    <i className="icon alt fa-building-o" />
                     Oct. 2018 – Now
                   </p>
                   <div className="box about-experienceBox">
@@ -99,7 +99,7 @@ export default () => (
                 </li>
                 <li className="about-experienceItem">
                   <p className="about-experiencePeriod">
-                    <icon className="icon alt fa-building-o" />
+                    <i className="icon alt fa-building-o" />
                     Jun. 2017 – Sep. 2018
                   </p>
                   <div className="box about-experienceBox">
@@ -116,7 +116,7 @@ export default () => (
                 </li>
                 <li className="about-experienceItem">
                   <p className="about-experiencePeriod">
-                    <icon className="icon alt fa-building-o" />
+                    <i className="icon alt fa-building-o" />
                     May 2016 – Jun. 2017
                   </p>
                   <div className="box about-experienceBox">
@@ -130,7 +130,7 @@ export default () => (
                 </li>
                 <li className="about-experienceItem">
                   <p className="about-experiencePeriod">
-                    <icon className="icon alt fa-building-o" />
+                    <i className="icon alt fa-building-o" />
                     Feb. 2015 – Feb. 2016
                   </p>
                   <div className="box about-experienceBox">
