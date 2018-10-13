@@ -1,5 +1,5 @@
 ---
-title: イヌでもわかるウェブフォント
+title: 誰でも使える！ウェブフォント実践マニュアル
 date: "2018-04-28T22:40:32.169Z"
 cover: "./cover.jpg"
 category: "Book"
@@ -8,6 +8,8 @@ path: "/works/webfont/"
 
 ![表紙](./cover.jpg)
 
-技術書典4で「イヌでもわかるウェブフォント」を頒布しました。
+「誰でも使える！ウェブフォント実践マニュアル」が商業書籍として出版されました。
 
-[View Project](http://apple.ee.uec.ac.jp/emotion/)
+技術書典4で頒布した「イヌでもわかるウェブフォント」の商業書籍版です。
+
+[View Project](https://nextpublishing.jp/book/9900.html)

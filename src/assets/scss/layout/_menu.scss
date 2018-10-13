@@ -108,6 +108,9 @@
 			vertical-align: middle;
 			white-space: nowrap;
 			width: 8em;
+			box-shadow: none;
+			text-transform: none;
+			font-size: 1em;
 
 			&:before, &:after {
 				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');

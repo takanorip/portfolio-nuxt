@@ -1,7 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
+
+import Layout from '../components/layout'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -9,22 +11,39 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div id="main" className="alt">
-        <div className="inner">
-          <Helmet>
-            <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
-            <meta name="description" content={`${post.frontmatter.title} | ${siteTitle}`} />
-            <meta property="og:title" content={`${post.frontmatter.title} | ${siteTitle}`} />
-            <meta property="og:description" content={`${post.frontmatter.title} | ${siteTitle}`} />
-            <meta property="og:image" content={'https://takanorip.com' + post.frontmatter.cover.childImageSharp.sizes.src} />
-          </Helmet>
-          <header className="major"><h1>{post.frontmatter.title}</h1></header>
-          <p>
-            {post.frontmatter.date}
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Layout>
+        <div id="main" className="alt">
+          <div className="inner">
+            <Helmet>
+              <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
+              <meta
+                name="description"
+                content={`${post.frontmatter.title} | ${siteTitle}`}
+              />
+              <meta
+                property="og:title"
+                content={`${post.frontmatter.title} | ${siteTitle}`}
+              />
+              <meta
+                property="og:description"
+                content={`${post.frontmatter.title} | ${siteTitle}`}
+              />
+              <meta
+                property="og:image"
+                content={
+                  'https://takanorip.com' +
+                  post.frontmatter.cover.childImageSharp.sizes.src
+                }
+              />
+            </Helmet>
+            <header className="major">
+              <h1>{post.frontmatter.title}</h1>
+            </header>
+            <p>{post.frontmatter.date}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

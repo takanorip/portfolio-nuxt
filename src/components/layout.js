@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link, withPrefix } from 'gatsby-link'
 import '../assets/scss/main.scss'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
@@ -8,31 +7,30 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 class Template extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
       isMenuVisible: false,
-      loading: 'is-loading'
+      loading: 'is-loading',
     }
     this.handleToggleMenu = this.handleToggleMenu.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.timeoutId = setTimeout(() => {
-      this.setState({loading: ''});
-    }, 100);
+      this.setState({ loading: '' })
+    }, 100)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
+      clearTimeout(this.timeoutId)
     }
   }
 
   handleToggleMenu() {
     this.setState({
-      isMenuVisible: !this.state.isMenuVisible
+      isMenuVisible: !this.state.isMenuVisible,
     })
   }
 
@@ -40,7 +38,11 @@ class Template extends React.Component {
     const { children } = this.props
 
     return (
-      <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
+      <div
+        className={`body ${this.state.loading} ${
+          this.state.isMenuVisible ? 'is-menu-visible' : ''
+        }`}
+      >
         <Helmet>
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://takanorip.com" />
@@ -49,11 +51,10 @@ class Template extends React.Component {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@takanoripe" />
           <meta name="twitter:creator" content="@takanoripe" />
-          <link rel="stylesheet" href={withPrefix('skel.css')} />
         </Helmet>
         <div id="wrapper">
           <Header onToggleMenu={this.handleToggleMenu} />
-          {children()}
+          {children}
           <Contact />
           <Footer />
         </div>
@@ -61,10 +62,6 @@ class Template extends React.Component {
       </div>
     )
   }
-}
-
-Template.propTypes = {
-  children: React.PropTypes.func
 }
 
 export default Template

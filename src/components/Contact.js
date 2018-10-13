@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = (props) => (
+const Contact = props => (
   <section id="contact">
     <div className="inner">
       <header className="major">
@@ -8,7 +8,15 @@ const Contact = (props) => (
       </header>
       <p>Please contact me via Twitter</p>
       <ul className="actions">
-        <li><a href="https://twitter.com/takanoripe" target="_blank" rel="noopener" className="button special icon fa-twitter">Twitter</a></li>
+        <li>
+          <a
+            href="https://twitter.com/takanoripe"
+            target="_blank" rel="noopener noreferrer"
+            className="button special icon fa-twitter"
+          >
+            Twitter
+          </a>
+        </li>
       </ul>
     </div>
   </section>
